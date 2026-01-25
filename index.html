@@ -1,0 +1,629 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Wake & Bake — Premium Biryani & Fast Food Restaurant!</title>
+
+		<!-- Google Fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+			rel="stylesheet"
+		/>
+
+		<!-- FontAwesome -->
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+		/>
+
+		<!-- Tailwind CSS -->
+		<script src="https://cdn.tailwindcss.com"></script>
+		<script>
+			tailwind.config = {
+				theme: {
+					extend: {
+						colors: {
+							primary: "#E85D04" /* Terracotta/Spicy Orange */,
+							secondary: "#2D3436" /* Dark Slate */,
+							cream: "#FFFBF2" /* Warm Cream */,
+							accent: "#D35400" /* Darker Rust */,
+						},
+						fontFamily: {
+							sans: ["Inter", "sans-serif"],
+							serif: ["Playfair Display", "serif"],
+						},
+					},
+				},
+			};
+		</script>
+
+		<style>
+			/* Custom Styles */
+			body {
+				background-color: #fffbf2;
+				color: #2d3436;
+			}
+
+			.glass-header {
+				background: rgba(255, 251, 242, 0.85);
+				backdrop-filter: blur(10px);
+				-webkit-backdrop-filter: blur(10px);
+				border-bottom: 1px solid rgba(232, 93, 4, 0.1);
+			}
+
+			.hero-pattern {
+				background-color: #fffbf2;
+				background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23e85d04' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+			}
+
+			.menu-card {
+				transition:
+					transform 0.3s ease,
+					box-shadow 0.3s ease;
+			}
+
+			.menu-card:hover {
+				transform: translateY(-5px);
+				box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+			}
+
+			.text-shadow {
+				text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+			}
+		</style>
+	</head>
+	<body class="font-sans antialiased relative">
+		<!-- Header -->
+		<header class="glass-header fixed w-full top-0 z-50 transition-all duration-300">
+			<div class="container mx-auto px-4 py-3 flex justify-between items-center">
+				<a href="#" class="flex items-center gap-3 group">
+					<!-- Using The Local Logo If Available, Otherwise Alternative Text Serves! -->
+					<div
+						class="h-10 w-10 rounded-full overflow-hidden border-2 border-primary shadow-sm relative bg-white"
+					>
+						<img
+							src="./Logo Mark.webp"
+							alt="Wake & Bake Logo Mark"
+							class="h-full w-full object-cover"
+						/>
+					</div>
+					<div>
+						<h1
+							class="font-serif text-xl font-bold text-primary leading-tight group-hover:text-accent transition-colors"
+						>
+							Wake & Bake
+						</h1>
+						<p class="text-xs text-gray-600 font-medium tracking-wide">
+							Premium Biryani & More
+						</p>
+					</div>
+				</a>
+
+				<nav class="hidden md:flex gap-6 text-sm font-semibold text-secondary">
+					<a href="#biryani" class="hover:text-primary transition-colors">Biryani</a>
+					<a href="#momo" class="hover:text-primary transition-colors">Momo</a>
+					<a href="#chinese" class="hover:text-primary transition-colors">Chinese</a>
+					<a href="#rolls" class="hover:text-primary transition-colors">Rolls</a>
+					<a href="#footer" class="hover:text-primary transition-colors">Contact</a>
+				</nav>
+
+				<a
+					href="tel:+918013945763"
+					class="hidden md:inline-flex items-center gap-2 bg-primary hover:bg-accent text-white px-5 py-2 rounded-full font-medium transition-all shadow-md hover:shadow-lg transfrom hover:scale-105"
+				>
+					<i class="fa-solid fa-phone"></i>
+					<span>Contact Now</span>
+				</a>
+			</div>
+		</header>
+
+		<!-- Mobile Bottom Navigation Spacer (Optional) -->
+
+		<!-- Hero Section -->
+		<section
+			class="mt-16 relative w-full h-[60vh] min-h-[400px] flex items-center justify-center overflow-hidden bg-black"
+		>
+			<!-- Background Image With Overlay -->
+			<div class="absolute inset-0 z-0 opacity-60">
+				<!-- Using A High-Quality Image For Biryani/Food Vibe -->
+				<img
+					src="https://images.unsplash.com/photo-1633945274405-b6c8069047b0?q=80&w=2670&auto=format&fit=crop"
+					alt="Delicious Biryani"
+					class="w-full h-full object-cover"
+				/>
+				<div
+					class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"
+				></div>
+			</div>
+
+			<div class="relative z-10 text-center px-4 max-w-3xl mx-auto">
+				<span
+					class="inline-block py-1 px-3 rounded-full bg-primary/90 text-white text-xs font-bold tracking-widest uppercase mb-4 animate-pulse"
+					>Open For Commercial Enquiries</span
+				>
+				<h2
+					class="font-serif text-4xl md:text-6xl font-bold text-white mb-4 text-shadow leading-tight"
+				>
+					Fresh & Delicious <br /><span class="text-primary italic">Food Every Day!</span>
+				</h2>
+				<p class="text-gray-200 text-lg md:text-xl mb-8 font-light max-w-xl mx-auto">
+					From Authentic Biryani To Crispy Momos, Experience The Taste Of Premium Quality
+					Locally!
+				</p>
+				<div class="flex flex-col sm:flex-row gap-4 justify-center">
+					<a
+						href="#menu"
+						class="bg-primary hover:bg-accent text-white text-lg font-bold px-8 py-3 rounded-full shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1"
+					>
+						View Menu &rarr;
+					</a>
+					<a
+						href="tel:+918013945763"
+						class="bg-white/10 backdrop-blur-sm border border-white/30 hover:bg-white/20 text-white text-lg font-bold px-8 py-3 rounded-full shadow-lg transition-all"
+					>
+						<i class="fa-solid fa-phone mr-2"></i> (+91) 8013945763
+					</a>
+				</div>
+			</div>
+		</section>
+
+		<!-- Menu Section -->
+		<main id="menu" class="container mx-auto px-4 py-16 hero-pattern">
+			<div class="text-center mb-12">
+				<h3 class="font-serif text-3xl font-bold text-secondary mb-2">Our Menu &rarr;</h3>
+				<div class="h-1 w-24 bg-primary mx-auto rounded-full"></div>
+				<p class="text-gray-500 mt-4 max-w-lg mx-auto">
+					Hand-Picked Ingredients, Authentic Recipes, Made With Love!
+				</p>
+			</div>
+
+			<!-- Category: Biryani -->
+			<section id="biryani" class="mb-12 scroll-mt-24">
+				<div class="flex items-center gap-4 mb-6">
+					<div
+						class="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center text-primary"
+					>
+						<i class="fa-solid fa-bowl-rice text-xl"></i>
+					</div>
+					<h4 class="font-serif text-2xl font-bold text-secondary">
+						Biryani Specials &rarr;
+					</h4>
+				</div>
+
+				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+					<!-- Item -->
+					<div
+						class="menu-card bg-white p-5 rounded-2xl border border-orange-100 shadow-sm relative overflow-hidden group"
+					>
+						<div
+							class="absolute top-0 right-0 bg-primary text-white text-xs font-bold px-3 py-1 rounded-bl-lg"
+						>
+							Bestseller!
+						</div>
+						<div class="flex justify-between items-start">
+							<div>
+								<h5
+									class="font-bold text-lg text-gray-800 group-hover:text-primary transition-colors"
+								>
+									Chicken Biryani
+								</h5>
+								<p class="text-sm text-gray-500 mt-1">
+									1 Piece Of Chicken, 1 Piece Of Potato.
+								</p>
+							</div>
+							<span class="font-serif font-bold text-xl text-primary">Rs. 100/-</span>
+						</div>
+					</div>
+
+					<!-- Item -->
+					<div
+						class="menu-card bg-white p-5 rounded-2xl border border-orange-100 shadow-sm group"
+					>
+						<div class="flex justify-between items-start">
+							<div>
+								<h5
+									class="font-bold text-lg text-gray-800 group-hover:text-primary transition-colors"
+								>
+									Special Chicken Biryani
+								</h5>
+								<p class="text-sm text-gray-500 mt-1">
+									2 Pieces Of Chicken, 1 Piece Of Potato.
+								</p>
+							</div>
+							<span class="font-serif font-bold text-xl text-primary">Rs. 160/-</span>
+						</div>
+					</div>
+
+					<!-- Item -->
+					<div
+						class="menu-card bg-white p-5 rounded-2xl border border-orange-100 shadow-sm group"
+					>
+						<div class="flex justify-between items-start">
+							<div>
+								<h5
+									class="font-bold text-lg text-gray-800 group-hover:text-primary transition-colors"
+								>
+									Mutton Biryani
+								</h5>
+								<p class="text-sm text-gray-500 mt-1">
+									1 Piece Of Mutton (180 Grams), 1 Piece Of Potato.
+								</p>
+							</div>
+							<span class="font-serif font-bold text-xl text-primary">Rs. 200/-</span>
+						</div>
+					</div>
+
+					<!-- Item -->
+					<div
+						class="menu-card bg-white p-5 rounded-2xl border border-orange-100 shadow-sm group"
+					>
+						<div class="flex justify-between items-start">
+							<div>
+								<h5
+									class="font-bold text-lg text-gray-800 group-hover:text-primary transition-colors"
+								>
+									Special Mutton Biryani
+								</h5>
+								<p class="text-sm text-gray-500 mt-1">2 Pieces Of Mutton.</p>
+							</div>
+							<span class="font-serif font-bold text-xl text-primary">Rs. 300/-</span>
+						</div>
+					</div>
+
+					<!-- Item -->
+					<div
+						class="menu-card bg-white p-5 rounded-2xl border border-orange-100 shadow-sm group"
+					>
+						<div class="flex justify-between items-start">
+							<div>
+								<h5
+									class="font-bold text-lg text-gray-800 group-hover:text-primary transition-colors"
+								>
+									Alu Biryani
+								</h5>
+								<p class="text-sm text-gray-500 mt-1">Aromatic Rice With Potato.</p>
+							</div>
+							<span class="font-serif font-bold text-xl text-primary">Rs. 60/-</span>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- Category: Momo -->
+			<section id="momo" class="mb-12 scroll-mt-24">
+				<div class="flex items-center gap-4 mb-6">
+					<div
+						class="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center text-primary"
+					>
+						<i class="fa-solid fa-dumpster text-xl"></i>
+						<!-- Closest Icon -->
+					</div>
+					<h4 class="font-serif text-2xl font-bold text-secondary">
+						Momo Station &rarr;
+					</h4>
+				</div>
+
+				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+					<!-- Item -->
+					<div
+						class="menu-card bg-white p-5 rounded-2xl border border-orange-100 shadow-sm group"
+					>
+						<div class="flex justify-between items-start">
+							<div>
+								<h5
+									class="font-bold text-lg text-gray-800 group-hover:text-primary transition-colors"
+								>
+									Classic Steamed Momo
+								</h5>
+								<p class="text-sm text-gray-500 mt-1">Served With Spicy Chutney.</p>
+							</div>
+							<div class="text-right">
+								<div class="font-serif font-bold text-lg text-primary">
+									Vegetable &rarr; Rs. 50/-
+								</div>
+								<div class="font-serif font-bold text-lg text-primary">
+									Chicken &rarr; Rs. 60/-
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Item -->
+					<div
+						class="menu-card bg-white p-5 rounded-2xl border border-orange-100 shadow-sm relative overflow-hidden group"
+					>
+						<div
+							class="absolute top-0 right-0 bg-accent text-white text-xs font-bold px-3 py-1 rounded-bl-lg"
+						>
+							Must Try!
+						</div>
+						<div class="flex justify-between items-start">
+							<div>
+								<h5
+									class="font-bold text-lg text-gray-800 group-hover:text-primary transition-colors"
+								>
+									Kurkure Chicken Momo
+								</h5>
+								<p class="text-sm text-gray-500 mt-1">
+									Special Crunchy Fried Momo.
+								</p>
+							</div>
+							<span class="font-serif font-bold text-xl text-primary">Rs. 80/-</span>
+						</div>
+					</div>
+
+					<!-- Item -->
+					<div
+						class="menu-card bg-white p-5 rounded-2xl border border-orange-100 shadow-sm group"
+					>
+						<div class="flex justify-between items-start">
+							<div>
+								<h5
+									class="font-bold text-lg text-gray-800 group-hover:text-primary transition-colors"
+								>
+									Chicken Tandoori Momo
+								</h5>
+								<p class="text-sm text-gray-500 mt-1">Smoky Clay Pot Flavor.</p>
+							</div>
+							<span class="font-serif font-bold text-xl text-primary">Rs. 80/-</span>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- Category: Chinese -->
+			<section id="chinese" class="mb-12 scroll-mt-24">
+				<div class="flex items-center gap-4 mb-6">
+					<div
+						class="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center text-primary"
+					>
+						<i class="fa-solid fa-utensils text-xl"></i>
+					</div>
+					<h4 class="font-serif text-2xl font-bold text-secondary">
+						Chinese & Noodles &rarr;
+					</h4>
+				</div>
+
+				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+					<!-- Item -->
+					<div
+						class="menu-card bg-white p-5 rounded-2xl border border-orange-100 shadow-sm group"
+					>
+						<div class="flex justify-between items-start">
+							<div>
+								<h5
+									class="font-bold text-lg text-gray-800 group-hover:text-primary transition-colors"
+								>
+									Chowmein
+								</h5>
+								<p class="text-sm text-gray-500 mt-1">
+									Classic Stir-Fried Noodles.
+								</p>
+							</div>
+							<div class="text-right">
+								<div class="font-serif font-bold text-lg text-primary">
+									Vegetable &rarr; Rs. 50/-
+								</div>
+								<div class="font-serif font-bold text-lg text-primary">
+									Chicken &rarr; Rs. 70/-
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Item -->
+					<div
+						class="menu-card bg-white p-5 rounded-2xl border border-orange-100 shadow-sm group"
+					>
+						<div class="flex justify-between items-start">
+							<div>
+								<h5
+									class="font-bold text-lg text-gray-800 group-hover:text-primary transition-colors"
+								>
+									Mixed Fried Rice
+								</h5>
+								<p class="text-sm text-gray-500 mt-1">With Chicken & Egg.</p>
+							</div>
+							<span class="font-serif font-bold text-xl text-primary">Rs. 90/-</span>
+						</div>
+					</div>
+
+					<!-- Item -->
+					<div
+						class="menu-card bg-white p-5 rounded-2xl border border-orange-100 shadow-sm group"
+					>
+						<div class="flex justify-between items-start">
+							<div>
+								<h5
+									class="font-bold text-lg text-gray-800 group-hover:text-primary transition-colors"
+								>
+									Chilli Chicken
+								</h5>
+								<p class="text-sm text-gray-500 mt-1">Available In Dry Or Gravy.</p>
+							</div>
+							<span class="font-serif font-bold text-xl text-primary">Rs. 80/-</span>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- Category: Rolls & Fast Food -->
+			<section id="rolls" class="mb-12 scroll-mt-24">
+				<div class="flex items-center gap-4 mb-6">
+					<div
+						class="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center text-primary"
+					>
+						<i class="fa-solid fa-burger text-xl"></i>
+					</div>
+					<h4 class="font-serif text-2xl font-bold text-secondary">
+						Rolls & Fast Food &rarr;
+					</h4>
+				</div>
+
+				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+					<!-- Item -->
+					<div
+						class="menu-card bg-white p-5 rounded-2xl border border-orange-100 shadow-sm group"
+					>
+						<div class="flex justify-between items-start">
+							<div>
+								<h5
+									class="font-bold text-lg text-gray-800 group-hover:text-primary transition-colors"
+								>
+									Kolkata Rolls
+								</h5>
+								<p class="text-sm text-gray-500 mt-1">Flaky Paratha Wrap.</p>
+							</div>
+							<div class="text-right">
+								<div class="font-serif font-bold text-lg text-primary">
+									Egg &rarr; Rs. 50/-
+								</div>
+								<div class="font-serif font-bold text-lg text-primary">
+									Chicken &rarr; Rs. 60/-
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Item -->
+					<div
+						class="menu-card bg-white p-5 rounded-2xl border border-orange-100 shadow-sm group"
+					>
+						<div class="flex justify-between items-start">
+							<div>
+								<h5
+									class="font-bold text-lg text-gray-800 group-hover:text-primary transition-colors"
+								>
+									Crispy Chicken Burger
+								</h5>
+								<p class="text-sm text-gray-500 mt-1">Loaded With Cheese.</p>
+							</div>
+							<span class="font-serif font-bold text-xl text-primary">Rs. 60/-</span>
+						</div>
+					</div>
+
+					<!-- Item -->
+					<div
+						class="menu-card bg-white p-5 rounded-2xl border border-orange-100 shadow-sm group"
+					>
+						<div class="flex justify-between items-start">
+							<div>
+								<h5
+									class="font-bold text-lg text-gray-800 group-hover:text-primary transition-colors"
+								>
+									Chicken Pizza
+								</h5>
+								<p class="text-sm text-gray-500 mt-1">Freshly Baked.</p>
+							</div>
+							<span class="font-serif font-bold text-xl text-primary">Rs. 149/-</span>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- Category: Beverages -->
+			<section id="beverages" class="mb-12 scroll-mt-24">
+				<div class="flex items-center gap-4 mb-6">
+					<div
+						class="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center text-primary"
+					>
+						<i class="fa-solid fa-mug-hot text-xl"></i>
+					</div>
+					<h4 class="font-serif text-2xl font-bold text-secondary">Beverages &rarr;</h4>
+				</div>
+
+				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+					<!-- Item -->
+					<div
+						class="menu-card bg-white p-5 rounded-2xl border border-orange-100 shadow-sm group"
+					>
+						<div class="flex justify-between items-center">
+							<div>
+								<h5
+									class="font-bold text-lg text-gray-800 group-hover:text-primary transition-colors"
+								>
+									Masala Tea
+								</h5>
+								<p class="text-sm text-gray-500 mt-1">Refreshing Spiced Tea.</p>
+							</div>
+							<span class="font-serif font-bold text-xl text-primary">Rs. 10/-</span>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+
+		<!-- Footer -->
+		<footer id="footer" class="bg-secondary text-white pt-16 pb-24 md:pb-8">
+			<div class="container mx-auto px-4">
+				<div
+					class="flex flex-col md:flex-row justify-between items-center gap-8 text-center md:text-left"
+				>
+					<div class="max-w-sm">
+						<div class="flex items-center justify-center md:justify-start gap-3 mb-4">
+							<div
+								class="h-12 w-12 rounded-full overflow-hidden border-2 border-primary"
+							>
+								<!-- Logo -->
+								<img
+									src="./Logo Mark.webp"
+									alt="Wake & Bake Logo Mark"
+									class="h-full w-full object-cover"
+								/>
+							</div>
+							<h2 class="font-serif text-2xl font-bold text-primary">Wake & Bake</h2>
+						</div>
+						<p class="text-gray-400 text-sm mb-4">
+							Premium Biryani & Fast Food, Bringing Authentic Flavors To Your Plate
+							With A Rustic Touch!
+						</p>
+					</div>
+
+					<div class="space-y-4">
+						<div class="flex items-start gap-3 justify-center md:justify-start">
+							<i class="fa-solid fa-location-dot text-primary mt-1"></i>
+							<p class="text-sm text-gray-300 max-w-xs">
+								Grand Trunk Road, Adisaptagram, Krishnapur,<br />
+								Chandanpur, Bandel, West Bengal, 712121.
+							</p>
+						</div>
+						<div class="flex items-center gap-3 justify-center md:justify-start">
+							<i class="fa-solid fa-phone text-primary"></i>
+							<a
+								href="tel:+918013945763"
+								class="text-lg font-bold hover:text-primary transition-colors"
+								>(+91) 8013945763</a
+							>
+						</div>
+					</div>
+				</div>
+
+				<div class="border-t border-gray-700 mt-12 pt-8 text-center text-xs text-gray-500">
+					&copy; 2026 Wake & Bake - All Rights Reserved! | Developed By
+					<a href="https://www.nexadigitalservices.agency"
+						>Nexa (Digital Services Agency)</a
+					>.
+				</div>
+			</div>
+		</footer>
+
+		<!-- Floating Action Button (Mobile Only) -->
+		<a
+			href="tel:+918013945763"
+			class="fixed bottom-6 right-6 md:hidden z-50 bg-primary text-white w-14 h-14 rounded-full shadow-2xl flex items-center justify-center animate-bounce hover:animate-none active:scale-95 transition-all"
+		>
+			<i class="fa-solid fa-phone text-2xl"></i>
+		</a>
+
+		<!-- Decorative Blob For Visual Interest -->
+		<div
+			class="fixed top-20 left-0 w-64 h-64 bg-primary/5 blur-[100px] rounded-full pointer-events-none -z-10"
+		></div>
+		<div
+			class="fixed bottom-0 right-0 w-80 h-80 bg-accent/5 blur-[100px] rounded-full pointer-events-none -z-10"
+		></div>
+	</body>
+</html>
